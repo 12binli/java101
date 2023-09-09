@@ -28,6 +28,8 @@ public class Main {
 
         System.out.println("KDV'siz fiyat: " + fiyat);
 
+        System.out.println("KDV oranı: %" + (kdvOrani*100));
+
         System.out.println("KDV tutarı: " + kdv);
 
         System.out.println("KDV'li fiyat: " + (kdv + fiyat));
