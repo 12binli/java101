@@ -35,4 +35,5 @@ public class Main {
         System.out.println("KDV'li fiyat: " + (kdv + fiyat));
 
     }
+
 }
