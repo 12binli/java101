@@ -20,7 +20,7 @@ public class Main {
 
         //kdv'yi hesapla
 
-        kdvOrani = fiyat<=1000 ? 0.18f : 0.08f;
+        kdvOrani = (fiyat>0 && fiyat <=1000) ? 0.18f : 0.08f;
 
         kdv = fiyat * kdvOrani;
 
