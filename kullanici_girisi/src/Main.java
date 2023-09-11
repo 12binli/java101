@@ -12,7 +12,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
-        //kullanıcıdan değerleri al.
+        //kullanıcıdan değerlerleri al ve ekrana uygun yazıyı yazdır.
 
         System.out.println("kullanıcı adınız: ");
 
@@ -21,8 +21,6 @@ public class Main {
         System.out.println("şifreniz: ");
 
         sifre = input.nextLine();
-
-        //
 
         if ((kullaniciAdi.equals("patika")) && (sifre.equals("java123"))) {
 
