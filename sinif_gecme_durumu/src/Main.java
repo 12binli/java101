@@ -69,13 +69,15 @@ public class Main {
 
         }
 
-        if ( sayi >= 1) {
+        if ( sayi >= 1 ) {
 
             if ((ort / sayi) >= 55) {
 
                 System.out.println("sınıfı geçtiniz.\n" + "ortalamanız: " + (ort / sayi));
 
-            } else if ((ort / sayi) < 55) {
+            }
+
+            else if ((ort / sayi) < 55) {
 
                 System.out.println("sınıfta kaldınız.\n" + "ortalamanız: " + (ort / sayi));
 
