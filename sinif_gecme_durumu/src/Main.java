@@ -89,7 +89,7 @@ public class Main {
 
         }
 
-        else if ( sayi >=1 && sayi <5 ) {
+        else if (sayi >=1) {
 
             System.out.println("en az bir not doğru aralıkta girilmedi. aralıkta olmayan notlar ortalamaya dahil edilmedi.");
 
