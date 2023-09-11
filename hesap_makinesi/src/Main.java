@@ -6,7 +6,7 @@ public class Main {
 
         //değişkenleri oluştur.
 
-        float n1, n2;
+        int n1, n2;
 
         byte islem;
 
@@ -18,11 +18,11 @@ public class Main {
 
         System.out.print("1. değeri giriniz: ");
 
-        n1 = input.nextFloat();
+        n1 = input.nextInt();
 
         System.out.print("2. değeri giriniz: ");
 
-        n2 = input.nextFloat();
+        n2 = input.nextInt();
 
         System.out.println("1-toplama\n2-çıkarma\n3-çarpma\n4-bölme");
 
@@ -42,7 +42,18 @@ public class Main {
                 System.out.print("iki sayının çarpımı: " + (n1*n2));
                 break;
             case 4:
-                System.out.print("iki sayının bölümü: " + (n1/n2));
+
+                switch (n2) {
+
+                    case (0):
+                        System.out.println("bir sayı 0'a bölünemez.");
+                        break;
+
+                    default:
+
+                        System.out.print("iki sayının bölümü: " + (n1/n2));
+
+                }
                 break;
             default:
                 System.out.print("1-4 arasında bir sayı girmediniz.");
