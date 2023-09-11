@@ -50,7 +50,6 @@ public class Main {
                         break;
 
                     default:
-
                         System.out.print("iki sayının bölümü: " + (n1/n2));
 
                 }
