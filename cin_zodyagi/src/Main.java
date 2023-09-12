@@ -96,7 +96,17 @@ public class Main {
 
         }
 
-        System.out.println("çin zodyağı burcunuz : "+zodyak);
+        if (yil<0) {
+
+            System.out.println("hatalı giriş yaptınız.");
+
+        }
+
+        else {
+
+            System.out.println("çin zodyağı burcunuz : " + zodyak);
+
+        }
 
     }
 
