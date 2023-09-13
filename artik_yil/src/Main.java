@@ -29,8 +29,6 @@ public class Main {
 
                 if (yil%400==0) {
 
-                    artik = true;
-
                 }
 
                 else {
