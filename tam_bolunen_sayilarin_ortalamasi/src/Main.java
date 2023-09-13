@@ -14,11 +14,13 @@ public class Main {
 
         //kullanıcıdan değeri al.
 
-        System.out.print("sayı giriniz : ");
+        System.out.println("sayı giriniz : ");
 
         a = input.nextInt();
 
         //sonucu ekrana yazdır.
+
+        System.out.println();
 
         for (int i = 1; i <= a; i++) {
 
@@ -26,6 +28,7 @@ public class Main {
 
                 b++;
                 c+=i;
+                System.out.println(""+i);
 
             }
 
@@ -33,7 +36,7 @@ public class Main {
 
         if (b>0) {
 
-            System.out.println("0'dan girilen sayıya kadar 3'e ve 4'e tam bölünen sayıların ortalaması : " + (c / b));
+            System.out.println("\n0'dan girilen sayıya kadar 3'e ve 4'e tam bölünen sayıların ortalaması : " + (c / b));
 
         }
 
