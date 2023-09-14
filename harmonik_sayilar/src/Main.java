@@ -30,7 +30,7 @@ public class Main {
 
         }
 
-        System.out.print("1'den n'e kadar olan harmonik serinin toplamı "+sonuc);
+        System.out.print("1'den n'e kadar olan harmonik serinin toplamı : "+sonuc);
 
     }
 
