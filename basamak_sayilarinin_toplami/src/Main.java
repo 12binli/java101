@@ -6,7 +6,7 @@ public class Main {
 
         //değişkenleri oluştur.
 
-        int n,b = 0,bd, sonuc=0;
+        int n,bd, sonuc=0;
 
         //scanner sınıfını tanımla.
 
@@ -21,16 +21,6 @@ public class Main {
         int gn = n;
 
         //sonucu ekrana yazdır.
-
-        while (gn != 0) {
-
-            gn /=10;
-
-            b++;
-
-        }
-
-        gn = n;
 
         while (gn !=0) {
 
