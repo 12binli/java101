@@ -106,7 +106,9 @@ public class Main {
 
                     System.out.println("hesabınız bloke olmuştur banka ile iletişime geçiniz.");
 
-                } else {
+                }
+
+                else {
 
                     System.out.println("kalan hakkınız : " + hak);
 
