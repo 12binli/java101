@@ -6,7 +6,7 @@ public class Main {
 
         //değişkenleri oluştur.
 
-        int n1,n2,ebob=0,ekok;
+        int n1,n2,ebob=0;
 
         //scanner sınıfını tanımla.
 
@@ -67,7 +67,7 @@ public class Main {
 
         }
 
-        else if (n1<n2) {
+        else {
 
             /*
 
