@@ -12,13 +12,9 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
-        //kullanıcıdan değerleri al.
-
         System.out.print("kaç tane sayı gireceksiniz : ");
 
         n = input.nextInt();
-
-        //sonucu ekrana yazdır.
 
         for (int i=1; i<=n; i++) {
 
