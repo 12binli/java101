@@ -30,25 +30,19 @@ public class Main {
 
                 if (i==0) {
 
-                    d=c*b;
-
-                    toplam+=d;
-
-                    System.out.print(a+toplam+" ");
-
                 }
 
                 else {
 
                     c*=2;
 
-                    d=c*b;
-
-                    toplam+=d;
-
-                    System.out.print(a+toplam+" ");
-
                 }
+
+                d=c*b;
+
+                toplam+=d;
+
+                System.out.print(a+toplam+" ");
 
             }
 
