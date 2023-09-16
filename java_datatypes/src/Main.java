@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         int t;
-        long n;
+        long x;
 
         Scanner input = new Scanner(System.in);
 
@@ -13,29 +13,29 @@ public class Main {
 
         for (int i=0; i<t; i++) {
 
-            n = input.nextLong();
+            x = input.nextLong();
 
-            System.out.println(n+" can be fitted in:");
+            System.out.println(x+" can be fitted in:");
 
-            if ( (n>=-128) && (n<=127) ) {
+            if ( (x>=-128) && (x<=127) ) {
 
                 System.out.println("* byte");
 
             }
 
-            if ( (n>=-32768) && (n<=32767) ) {
+            if ( (x>=-32768) && (x<=32767) ) {
 
                 System.out.println("* short");
 
             }
 
-            if ( (n>=-2147483648) && (n<=2147483647) ) {
+            if ( (x>=-2147483648) && (x<=2147483647) ) {
 
                 System.out.println("* int");
 
             }
 
-            if ( (n>=-9223372036854775808L) && (n<=9223372036854775807L) ) {
+            if ( (x>=-9223372036854775808L) && (x<=9223372036854775807L) ) {
 
                 System.out.println("* long");
 
