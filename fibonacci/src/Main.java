@@ -29,7 +29,6 @@ public class Main {
                 c = a + b;
                 a = b;
 
-
             }
 
             else {
@@ -38,7 +37,6 @@ public class Main {
 
                 b = a + c;
                 a = c;
-
 
             }
 
