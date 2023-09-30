@@ -1,28 +1,31 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class MayinTarlasi {
 
-    Random rastgele = new Random();
     int satir;
     int sutun;
-    int mSayisi=0;
-    int rastgeleX;
-    int rastgeleY;
-    int[][] mayinHaritasi;
+    String[][] gizliHarita;
     String[][] harita;
+    int mayinSayisi = 0;
+    int satirI;
+    int sutunI;
 
-    MayinTarlasi (int satir, int sutun) {
+    MayinTarlasi(int satir, int sutun) {
 
         this.satir = satir;
         this.sutun = sutun;
-        this.mayinHaritasi = new int[satir][sutun];
+        this.gizliHarita = new String[satir][sutun];
         this.harita = new String[satir][sutun];
 
-        for (String[] str : harita ) {
+    }
 
-            for (int i = 0; i<sutun; i++) {
+    void haritaDoldur(String[][] harita) {
 
-                str[i] = "_";
+        for (int i = 0; i < this.satir; i++) {
+
+            for (int j = 0; j < this.sutun; j++) {
+
+                harita[i][j] = "-";
 
             }
 
@@ -30,82 +33,131 @@ public class MayinTarlasi {
 
     }
 
-    void rastgeleMayinEkle (int satir,int sutun) {
+    void mayinDoldur() {
 
-        while (mSayisi < (satir*sutun/4)) {
+        while (mayinSayisi < (this.satir * this.sutun) / 4){
 
-            rastgeleX = rastgele.nextInt(satir);
-            rastgeleY = rastgele.nextInt(sutun);
+            int r1 = (int) (Math.random() * this.satir);
+            int r2 = (int) (Math.random() * this.sutun);
 
-            if (bosMu(rastgeleX,rastgeleY)) {
+            if (!this.gizliHarita[r1][r2].equals("*")) {
 
-                mayinHaritasi[rastgeleY][rastgeleY] = 1;
-                mSayisi++;
+                this.gizliHarita[r1][r2] = "*";
+
+                mayinSayisi++;
 
             }
 
         }
 
-    }
+        /*
 
-    boolean bosMu (int satir, int sutun) {
+        for (int i = 0; i < mayinSayisi; i++) {
 
-        if (mayinHaritasi[satir][sutun]==0) {
+            int r1 = (int) (Math.random() * this.satir);
+            int r2 = (int) (Math.random() * this.sutun);
 
-            return true;
-        }
-        else {
+            if (!this.gizliHarita[r1][r2].equals("*")) {
 
-            return false;
+                this.gizliHarita[r1][r2] = "*";
 
-        }
-
-    }
-
-    boolean patladiMi (int satir, int sutun) {
-
-        if (bosMu(satir,sutun)) {
-
-            return false;
+            }
 
         }
-        else {
 
-            return true;
-
-        }
+         */
 
     }
 
-    boolean kontrolMu (int satir,int sutun) {
+    void haritaYazdir(String[][] harita) {
 
-        if (harita[satir][sutun].equals("_")) {
+        for (int i = 0; i < this.satir; i++) {
 
-            return false;
+            for (int j = 0; j < this.sutun; j++) {
 
-        }
-        else {
+                System.out.print(harita[i][j] + " ");
 
-            return true;
+            }
+
+            System.out.println();
+
         }
 
     }
 
-    void mayinKontrol(int satir, int sutun) {
+    void secimYap() {
 
-        int mayinSayac = 0;
+        Scanner input = new Scanner(System.in);
 
-        for (int i= satir-1; i<= satir+1; i++) {
+        boolean dogruMu = false;
 
-            for (int j= sutun -1; j<= sutun+1; j++) {
+        while (!dogruMu) {
 
-                if (i >= 0 && i < satir && j>=0 && j<sutun) {
+            System.out.println("kaçıncı satır giriniz.");
 
-                    if (!bosMu(i,j)) {
+            satirI = input.nextInt() - 1;
 
-                        mayinSayac++;
+            System.out.println("kaçıncı sütun giriniz.");
 
-                    }
+            sutunI = input.nextInt() - 1;
+
+            System.out.println();
+
+            if (satirI>= this.satir || sutunI >= this.sutun) {
+
+                System.out.println("mayın tarlası alanının dışında bir giriş yaptınız. tekrar deneyiniz.");
+                System.out.println();
+                continue;
+
+            }
+
+            if (gizliHarita[satirI][sutunI].equals("*")) {
+
+                System.out.println("kaybettiniz! (*'lar mayınları temsil etmektedir.)");
+
+                System.out.println();
+
+                break;
+
+            }
+
+            hucreDoldur();
+
+            if (bittiMi()) {
+
+                System.out.println("kazandınız! (*'lar mayınları temsil etmektedir.)");
+                dogruMu = true;
+
+            }
+
+            else {
+
+                haritaYazdir(this.harita);
+
+            }
+
+            System.out.println();
+
+        }
+
+    }
+
+    void hucreDoldur() {
+
+        int sayac = 0;
+
+        for (int i = (satirI-1); i <= (satirI+1); i++) {
+
+            for (int j = (sutunI-1); j <= (sutunI+1); j++) {
+
+                if (i<0 || j<0 || i>= this.satir || j>= this.sutun) {
+
+                    continue;
+
+                }
+                if(this.gizliHarita[i][j].equals("*")) {
+
+                    sayac++;
 
                 }
 
@@ -113,23 +165,35 @@ public class MayinTarlasi {
 
         }
 
-        harita[satir][sutun] = Integer.toString(mayinSayac);
+        this.harita[satirI][sutunI] = String.valueOf(sayac);
+        this.gizliHarita[satirI][sutunI] = String.valueOf(sayac);
 
     }
 
-    void haritaYazdir() {
+    boolean bittiMi () {
 
-        for (String[] satir : harita) {
-
-            for (String sutun : satir) {
-
-                System.out.print(sutun + " ");
-
+        for (int i = 0; i < this.satir; i++) {
+            for (int j = 0; j < this.sutun; j++) {
+                if (this.gizliHarita[i][j].equals("-")) {
+                    return false;
+                }
             }
-
-            System.out.println();
-
         }
+        return true;
+
+    }
+
+    void calistir() {
+
+        haritaDoldur(this.gizliHarita);
+        mayinDoldur();
+        haritaYazdir(this.gizliHarita);
+        System.out.println();
+        haritaDoldur(this.harita);
+        haritaYazdir(this.harita);
+        System.out.println();
+        secimYap();
+        haritaYazdir(this.gizliHarita);
 
     }
 
